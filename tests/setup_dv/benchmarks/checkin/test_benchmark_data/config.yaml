@@ -1,0 +1,23 @@
+group: sdf_test
+fabric: dp
+testcases:
+  - name: sdf_gate_level_test
+    variables:
+      root_path: "./sdf_test_env/[current_fabric]/[current_group]/[current_name]"
+    files:
+      - name: gate_level_netlist
+        type: gl
+        src: "./tests/setup_dv/benchmarks/checkin/test_benchmark_data/test_data/fabric_netlists.v"
+        des: "[root_path]/gl/fabric_netlists.v"
+      - name: post_layout_netlist
+        type: pl
+        src: "./tests/setup_dv/benchmarks/checkin/test_benchmark_data/test_data/fabric_netlists.v"
+        des: "[root_path]/pl/fabric_netlists.v"
+      - name: gate_level_sdf 
+        type: gl_sdf 
+        src: "./tests/setup_dv/benchmarks/checkin/test_benchmark_data/test_data/gate_level_netlist.sdf" 
+        des: "[root_path]/gl_netlist.sdf" 
+      - name: post_layout_sdf 
+        type: pl_sdf 
+        src: "./tests/setup_dv/benchmarks/checkin/test_benchmark_data/test_data/post_layout_netlist.sdf" 
+        des: "[root_path]/pl_netlist.sdf" 

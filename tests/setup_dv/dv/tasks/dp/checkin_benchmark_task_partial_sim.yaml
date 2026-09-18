@@ -1,0 +1,82 @@
+group: checkin
+fabric: dp
+testcases:
+  - name: and2
+    setup_only: true # Do not run simulation for this task. This is used when a benchmark is still buggy
+    variables:
+      root_path: "./preconfig_testbench/[current_fabric]/[current_group]/[current_name]"
+      netlist_path: "../netlist"
+    files:
+      - name: rtl
+        type: rtl
+        src: "[netlist_path]/rtl"
+        des: "[root_path]/rtl"
+      - name: gl
+        type: gl
+        src: "[netlist_path]/gl/[current_fabric]"
+        des: "[root_path]/gl"
+      - name: pl
+        type: pl
+        src: "[netlist_path]/pl"
+        des: "[root_path]/pl"
+      - name: makefile
+        type: cocotb_makefile
+        src: "../benchmarks/[current_group]/[current_name]/Makefile"
+        des: "[root_path]/Makefile"
+      - name: testbench
+        type: cocotb_testbench
+        src: "../benchmarks/[current_group]/[current_name]/test_[current_name].py"
+        des: "[root_path]/test_[current_name].py"
+      - name: bitstream_base
+        type: bitstream_base
+        src: "./bitstreams/[current_fabric]/base_bitstream/fabric_bitstream_base.xml"
+        des: "[root_path]/fabric_bitstream_base.xml"
+      - name: bitstream_value
+        type: bitstream_value
+        src: "./bitstreams/[current_fabric]/[current_group]/[current_name]/fabric_bitstream.xml"
+        des: "[root_path]/fabric_bitstream.xml"
+      - name: cocotb_force
+        type: cocotb_util
+        src: "../utils/cocotb_utils/scripts/cocotb_force_bitstream.py"
+        des: "[root_path]/cocotb_force_bitstream.py"
+  - name: and2_latch
+    variables:
+      root_path: "./preconfig_testbench/[current_fabric]/[current_group]/[current_name]"
+      netlist_path: "../netlist"
+    files:
+      - name: rtl
+        type: rtl
+        src: "[netlist_path]/rtl"
+        des: "[root_path]/rtl"
+      - name: gl
+        type: gl
+        src: "[netlist_path]/gl/[current_fabric]"
+        des: "[root_path]/gl"
+      - name: pl
+        type: pl
+        src: "[netlist_path]/pl"
+        des: "[root_path]/pl"
+      - name: makefile
+        type: cocotb_makefile
+        src: "../benchmarks/[current_group]/[current_name]/Makefile"
+        des: "[root_path]/Makefile"
+      - name: testbench
+        type: cocotb_testbench
+        src: "../benchmarks/[current_group]/[current_name]/test_[current_name].py"
+        des: "[root_path]/test_[current_name].py"
+      - name: bitstream_base
+        type: bitstream_base
+        src: "./bitstreams/[current_fabric]/base_bitstream/fabric_bitstream_base.xml"
+        des: "[root_path]/fabric_bitstream_base.xml"
+      - name: bitstream_value
+        type: bitstream_value
+        src: "./bitstreams/[current_fabric]/[current_group]/[current_name]/fabric_bitstream.xml"
+        des: "[root_path]/fabric_bitstream.xml"
+      - name: cocotb_force
+        type: cocotb_util
+        src: "../utils/cocotb_utils/scripts/cocotb_force_bitstream.py"
+        des: "[root_path]/cocotb_force_bitstream.py"
+      - name: sysvlog_testbench
+        type: link
+        src: "../benchmarks/[current_group]/[current_name]/[current_name]_tb.v"
+        des: "[root_path]/[current_name]_tb.v"

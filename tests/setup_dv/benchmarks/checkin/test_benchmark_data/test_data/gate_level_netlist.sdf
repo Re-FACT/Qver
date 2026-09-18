@@ -1,0 +1,21 @@
+(DELAYFILE
+  (SDFVERSION "3.0")
+  (TIMESCALE 1ns)
+  (DESIGN "gate_level_test")
+  (DATE "2023-01-01")
+  (VENDOR "TestVendor")
+  (PROGRAM "TestProgram")
+  (VERSION "1.0")
+  (DIVIDER /)
+  (BUS_DELIMITER [])
+  (CELL
+    (CELLTYPE "test_module")
+    (INSTANCE)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH clk data_out (0.5)(0.7))
+        (IOPATH data_in data_out (0.3)(0.4))
+      )
+    )
+  )
+)
