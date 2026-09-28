@@ -33,7 +33,7 @@ jobs:
           submodules: false
 
       - name: Checkout infra
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: Re-FACT/refact_infra
           path: utils/refact_infra

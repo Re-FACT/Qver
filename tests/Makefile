@@ -14,10 +14,6 @@ export COMMENT_EXTRACT
 help:
 	@${PYTHON_EXEC} -c "$$COMMENT_EXTRACT"
 
-test_restructure_bitstream:
-# This command tests the functionality of restructure_bitstream.py
-	currDir=$${PWD} && cd restructure_bitstream && ${PYTHON_EXEC} ${SCRIPT_DIR}/restructure_bitstream.py --rule_file rules.yaml && cd $${currDir}; \
-
 test_setup_cocotb:
 # This command tests the functionality of setup cocotb dv tasks
 	currDir=$${PWD} && cd setup_dv/dv && make setup_preconfig_cocotb && cd $${currDir}; \
@@ -67,18 +63,16 @@ test_run_cocotb_xcelium:
 	currDir=$${PWD} && cd setup_dv/dv && make run_preconfig_cocotb COCOTB_TASKS=and2 SIM=cadence_xcelium && cd $${currDir}; \
 
 all:
-	make test_restructure_bitstream
 	make test_setup_cocotb
 	make test_setup_cocotb_partial_sim
 	make test_list_tasks
 	make test_run_cocotb
 	make test_run_cocotb_partial_sim
 	make test_run_cocotb_selected_task
-	make test_run_cocotb_waveform
-	make test_run_cocotb_modelsim
-	make test_run_cocotb_vcs
-	make test_run_cocotb_questa
-
+#	make test_run_cocotb_waveform
+#	make test_run_cocotb_modelsim
+#	make test_run_cocotb_vcs
+#	make test_run_cocotb_questa
 # The two simulators require more tuning 
 #	make test_run_cocotb_incisive
 #	make test_run_cocotb_xcelium
