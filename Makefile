@@ -21,7 +21,7 @@ help:
 	@${PYTHON_EXEC} -c "$$COMMENT_EXTRACT"
 
 test:
-# Show how to run regression tests for old scripts (to be deprecated)
+# Run regression tests
 	currDir=$${PWD} && cd tests && make all && cd $${currDir} || exit 1;
 
 update_version:
