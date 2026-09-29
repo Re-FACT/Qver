@@ -111,6 +111,12 @@ wire [0:0] clk_fm;
 	assign gfpga_pad_GPIO_PAD_fm[61] = 1'b0;
 	assign gfpga_pad_GPIO_PAD_fm[62] = 1'b0;
 	assign gfpga_pad_GPIO_PAD_fm[63] = 1'b0;
+  initial begin
+    // 1. Specify the name of the output waveform file
+    $dumpfile("waveform.vcd");
+    // 2. Specify which variables/scopes to record (0 means everything under this module)
+    $dumpvars(0, and2_top_formal_verification);
+  end
 endmodule
 // ----- END Verilog module for and2_top_formal_verification -----
 
