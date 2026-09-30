@@ -5,7 +5,7 @@ VERSION_FILE = VERSION.md
 TAGGED_COMMIT_FILE = .TAGGED_COMMIT
 VERSION_BUMP_TYPE = minor
 FORCE_COMMIT_VERSION_UPDATE = off
-INFRA_ROOT = /eda/internal/alkaid_infra/
+INFRA_ROOT = ${PWD}/utils/refact_infra/
 NUM_JOBS = 2
 
 # Format executables
@@ -21,7 +21,7 @@ help:
 	@${PYTHON_EXEC} -c "$$COMMENT_EXTRACT"
 
 test:
-# Show how to run regression tests for old scripts (to be deprecated)
+# Run regression tests
 	currDir=$${PWD} && cd tests && make all && cd $${currDir} || exit 1;
 
 update_version:
@@ -44,6 +44,10 @@ format-py:
 	do \
 	${PYTHON_FORMAT_EXEC} $${f} --line-length 100 || exit 1; \
 	done
+
+check-format-py:
+# Check if all the python files are in the expected format
+	${INFRA_ROOT}/scripts/check-format.sh -py
 
 doc:
 # Compile documentation in HTML format

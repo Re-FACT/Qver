@@ -5,7 +5,6 @@
 # defaults
 
 SIM ?= icarus
-SDF_FILE ?=
 include ${MAKEFILE_INC_HOME}/makefile_vcs.inc
 TOPLEVEL_LANG ?= verilog
 
