@@ -26,7 +26,7 @@ TOPLEVEL = and2_top_formal_verification
 COCOTB_TEST_MODULES = test_and2
 
 # --- THE COCOTB TWEAK FOR HANDLING X/Z ---
-export COCOTB_RESOLVE_X=ZEROS
+COCOTB_RESOLVE_X=ZEROS
 
 # include cocotb's make rules to take care of the simulator setup
 
