@@ -8,7 +8,7 @@
 from cocotb.handle import Force, Release, Deposit
 import xml.etree.ElementTree as ET
 import re
-
+import cocotb
 
 def parse_base_xml(base_file):
     """
@@ -65,7 +65,6 @@ def cocotb_force_bitstream_to_dut_from_xml(
         fpga_top_module: Top module name in the bitstream
         dut_path: Corresponding path in the DUT
     """
-
     # Parse XML files
     id_to_path = parse_base_xml(pathfile)
     bit_values = parse_bit_xml(bitfile)
@@ -109,7 +108,11 @@ def cocotb_force_bitstream_to_dut_from_xml(
             obj = dut
             for name in config_bit_fpath.split(".")[1:]:  # Skip initial 'dut'
                 obj = getattr(obj, name)
-            obj.value = Force(data_int)
+            # icarus verilog requires a different way to force signal
+            if cocotb.SIM_NAME == "Icarus Verilog":
+                obj.value = data_int
+            else: # The follow works on commercial simulators: vcs, modelsim, xceilum etc.
+                obj.value = Force(data_int)
 
         elif netlist_type == "pl":
             dut._log.error("Post-layout netlist is not supported yet! Exiting...")
