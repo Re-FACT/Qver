@@ -109,6 +109,7 @@ def cocotb_force_bitstream_to_dut_from_xml(
             for name in config_bit_fpath.split(".")[1:]:  # Skip initial 'dut'
                 obj = getattr(obj, name)
             # icarus verilog requires a different way to force signal
+            # In case the SIM_NAME for icarus change. Use print(f"Sim: {cocotb.SIM_NAME}") to double check
             if cocotb.SIM_NAME == "Icarus Verilog":
                 obj.value = data_int
             else: # The follow works on commercial simulators: vcs, modelsim, xceilum etc.
