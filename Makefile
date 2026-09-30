@@ -45,6 +45,10 @@ format-py:
 	${PYTHON_FORMAT_EXEC} $${f} --line-length 100 || exit 1; \
 	done
 
+check-format-py:
+# Check if all the python files are in the expected format
+	${INFRA_ROOT}/scripts/check-format.sh -py
+
 doc:
 # Compile documentation in HTML format
 	cd docs; echo "Enter docs directory"; \
