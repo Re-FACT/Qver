@@ -23,7 +23,7 @@ TOPLEVEL = and2_top_formal_verification
 
 # MODULE is the basename of the Python test file
 
-MODULE = test_and2
+COCOTB_TEST_MODULES = test_and2
 
 
 
