@@ -24,7 +24,7 @@ jobs:
       - name: Checkout infra
         uses: actions/checkout@v4
         with:
-          repository: Ra-FACT/refact_infra
+          repository: Re-FACT/refact_infra
           path: utils/refact_infra
 
       - name: Insert Patch Count
