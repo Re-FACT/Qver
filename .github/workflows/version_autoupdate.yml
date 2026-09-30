@@ -27,6 +27,10 @@ jobs:
           repository: Re-FACT/refact_infra
           path: utils/refact_infra
 
+      - name: Tool version
+        run: |
+          git --version
+
       - name: Insert Patch Count
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
