@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # This fetches all history for all branches and tags, required by version updater
 
       - name: Checkout infra
         uses: actions/checkout@v4
