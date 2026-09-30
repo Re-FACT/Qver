@@ -10,6 +10,7 @@ import xml.etree.ElementTree as ET
 import re
 import cocotb
 
+
 def parse_base_xml(base_file):
     """
     Parse the base XML file containing mapping from bit IDs to signal paths.
@@ -112,7 +113,7 @@ def cocotb_force_bitstream_to_dut_from_xml(
             # In case the SIM_NAME for icarus change. Use print(f"Sim: {cocotb.SIM_NAME}") to double check
             if cocotb.SIM_NAME == "Icarus Verilog":
                 obj.value = data_int
-            else: # The follow works on commercial simulators: vcs, modelsim, xceilum etc.
+            else:  # The follow works on commercial simulators: vcs, modelsim, xceilum etc.
                 obj.value = Force(data_int)
 
         elif netlist_type == "pl":

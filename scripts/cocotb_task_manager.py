@@ -35,6 +35,7 @@ VALID_TESTCASE_FILE_TYPE_LINK = "link"
 VALID_TESTCASE_FILE_TYPE_GL_SDF = "gl_sdf"
 VALID_TESTCASE_FILE_TYPE_PL_SDF = "pl_sdf"
 
+
 # Class of a Cocotb task manager
 class CocotbTaskManager:
     def __init__(self):
