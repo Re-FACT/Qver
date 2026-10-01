@@ -3,7 +3,7 @@
 User Interface
 --------------
 
-The script has a command-line user interface which allows users to customize their ICC2 jobs.
+The script has a command-line user interface which allows users to customize their cocotb jobs.
 
 A short version of command-line options can be shown by calling the help desk through
 

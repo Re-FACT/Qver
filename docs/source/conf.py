@@ -35,8 +35,8 @@ import sphinxcontrib.rsvgconverter
 
 # -- Project information -----------------------------------------------------
 project = u'Example'
-copyright = u'2022 RapidFlex'
-author = u'RapidFlex'
+copyright = u'2022 ReFACT'
+author = u'ReFACT'
 doc_title = u''
 
 # The short X.Y version
@@ -205,7 +205,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, project + '.tex', doc_title,
-     u'RapidFlex', 'manual'),
+     u'ReFACT', 'manual'),
 ]
 
 
@@ -226,7 +226,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, project, doc_title,
-     author, 'RapidFlex', 'RapidFlex Software',
+     author, 'ReFACT', 'ReFACT Software',
      'Miscellaneous'),
 ]
 
