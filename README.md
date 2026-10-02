@@ -23,8 +23,8 @@ Qver is based on the [Cocotb](https://www.cocotb.org/), and hence support most o
 
 ## Documentation
 
-Full documentatation can be found [here](https://qver.readthedocs-hosted.com/en/latest//)
+Full documentatation can be found [here](https://qver.readthedocs-io/en/latest//)
 
 ## Developer Guidelines
 
-Please read the [contributor_guidelines](https://qver.readthedocs-hosted.com/en/latest/developer/contributor_guidelines/) if you would like to contribute to the project.
+Please read the [contributor_guidelines](https://qver.readthedocs.io/en/latest/developer/contributor_guidelines/) if you would like to contribute to the project.
